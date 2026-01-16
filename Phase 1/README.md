@@ -118,3 +118,41 @@ I need:
 6. Notes on fragility / instability
 
 👉 This naturally exposes research gaps
+
+# PHASE 4 — Identify gaps (this becomes your problem statement)
+
+After reproduction, gaps usually fall into buckets like:
+
+## Gap	Example
+1. No correctness guarantees	Agent learns bad behaviors
+2. Silent regressions	Improves task A, breaks task B
+3. Unsafe tool usage	Calls forbidden APIs
+4. No interpretability	Cannot explain changes
+5. No formal acceptance	Any change is accepted
+
+#### verified synthesis engine fits here perfectly.
+
+##### Example problem statement (early form)
+
+“Existing self-refining agents rely on heuristic self-modification mechanisms that offer no guarantees on correctness, safety, or regression. This work addresses this limitation by…”
+
+# PHASE 5 — Design a minimal extension (VERY IMPORTANT)
+
+My first paper should NOT try to do everything.
+
+Minimal, strong extension
+
+Add one verification layer:
+
+* typed DSL OR
+
+* regression test gate OR
+
+* symbolic tool constraints
+
+Even just regression-safe acceptance is enough for Paper 1.
+
+Example extension
+
+Replace Reflexion’s “always accept reflection” with:
+“Accept modification only if it passes symbolic checks + regression tasks”
